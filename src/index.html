@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>服务管理工具</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <div class="logo-wrapper">
+    <img src="./assets/images/logo.jpg" />
+    <div class="txt">服务管理工具</div>
+  </div>
+  <div class="info-wrapper">
+    <div class="info-title">服务信息</div>
+    <table class="server-table">
+      <thead>
+        <tr>
+          <th>服务名称</th>
+          <th>状态</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>系统服务</td>
+          <td id="java-status"></td>
+          <td style="width: 230px;">
+            <!-- <button class="btn" onclick="javaClick('start')">启动</button> -->
+            <button class="btn" onclick="javaClick('stop')">停止</button>
+            <button id="java_restart_btn" class="btn" onclick="javaClick('restart')">重启</button>
+          </td>
+        </tr>
+        <tr>
+          <td>指令服务</td>
+          <td id="node-red-status"></td>
+          <td style="width: 230px;">
+            <!-- <button class="btn" onclick="nodeRedClick('start')">启动</button> -->
+            <button class="btn" onclick="nodeRedClick('stop')">停止</button>
+            <button id="nodered_restart_btn" class="btn" onclick="nodeRedClick('restart')">重启</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="info-wrapper">
+    <div class="info-title">应用授权</div>
+    <button class="btn" onclick="getCode()">生成授权机器码</button>
+    <button class="btn" onclick="getCodeInfo()">获取信息</button>
+
+
+    <button class="btn" style="position: relative;">导入授权证书<input type="file" id="upload_input" name="avatar" /></button>
+    <div id="preview-wrapper">
+      <div id="preview">
+        <div id="closepreview" onclick="closePreview()">x</div>
+      </div>
+      <button class="btn" onclick="upload()">上传</button>
+    </div>
+    <div class="info-box">
+      <div class="info-item">机器码：<span id="devCode"></span></div>
+      <div class="info-item">授权状态：<span id="auth-status"></span></div>
+      <div class="info-item">授权期限：<span id="auth-deadline"></span></div>
+      <div class="info-item">授权时间：<span id="auth-time"></span></div>
+    </div>
+  </div>
+  <script src="renderer.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+{
+  "apps": {
+    "name": "je-mescada-boot",
+    "script": "java",
+    "cwd": "./jar",
+    "error_file": "./pm2javaLog/err.log",
+    "out_file": "./pm2javaLog/out.log",
+    "log_date_format": "YYYY/MM/DD HH:mm:ss",
+    "autorestart": false,
+    "args": ["-jar", "-Dfile.encoding=utf-8", "je-mescada-boot-0.0.1-SNAPSHOT.jar"]
+  }
+}
